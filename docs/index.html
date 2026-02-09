@@ -1,0 +1,569 @@
+<html>hello, world!</html>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удивительный мир кошек</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #4a6491;
+            --secondary-color: #2c3e50;
+            --accent-color: #f9d71c;
+            --light-color: #f5f7fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--light-color) 0%, #c3cfe2 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            margin-top: 1rem;
+            color: var(--accent-color);
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .content-text {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .image-container {
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .fact-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .fact-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .fact-card h3 i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .content-highlight {
+            background: linear-gradient(to right, rgba(74, 100, 145, 0.1), rgba(44, 62, 80, 0.05));
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .content-highlight h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            opacity: 0.8;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-toc {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-toc h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .toc-list {
+            list-style-type: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .toc-list a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .toc-list a i {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <h1>Удивительный мир кошек</h1>
+            <p class="subtitle">Грациозные, независимые и загадочные создания</p>
+            <div class="cat-icon">
+                <i class="fas fa-cat"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Навигация -->
+        <section class="nav-toc">
+            <h3>Содержание</h3>
+            <ul class="toc-list">
+                <li><a href="#history"><i class="fas fa-book"></i> История одомашнивания</a></li>
+                <li><a href="#breeds"><i class="fas fa-paw"></i> Породы кошек</a></li>
+                <li><a href="#anatomy"><i class="fas fa-brain"></i> Анатомические особенности</a></li>
+                <li><a href="#behavior"><i class="fas fa-comments"></i> Поведение и интеллект</a></li>
+                <li><a href="#facts"><i class="fas fa-lightbulb"></i> Интересные факты</a></li>
+            </ul>
+        </section>
+
+        <!-- История одомашнивания -->
+        <section id="history" class="content-section">
+            <h2 class="section-title">История одомашнивания</h2>
+            <div class="content-text">
+                <p>Кошки были одомашнены около 10 000 лет назад на Ближнем Востоке. Первые свидетельства сосуществования человека и кошки обнаружены на Кипре, где в захоронении возрастом 9500 лет найдены останки человека и кошки.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="images/photo2.jpg" alt="Кот с выразительными глазами">
+                <div class="image-caption">Современные кошки сохранили многие черты своих диких предков</div>
+            </div>
+
+            <div class="content-text">
+                <p>В Древнем Египте кошки считались священными животными. Их убийство каралось смертной казнью, а когда домашняя кошка умирала, все члены семьи сбривали брови в знак траура. Кошек мумифицировали и хоронили с почестями, а культ богини Бастет, изображавшейся в виде кошки или женщины с кошачьей головой, был одним из самых популярных в Египте.</p>
+            </div>
+        </section>
+
+        <!-- Породы кошек -->
+        <section id="breeds" class="content-section">
+            <h2 class="section-title">Породы кошек</h2>
+            <div class="content-text">
+                <p>Сегодня в мире насчитывается более 200 пород кошек. Они различаются размерами, длиной шерсти, окрасом и характером. Каждая порода имеет свои уникальные особенности и требования к уходу.</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Порода</th>
+                            <th>Характеристики</th>
+                            <th>Особенности</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Мейн-кун</strong></td>
+                            <td>Крупные, длинношерстные</td>
+                            <td>Дружелюбные, "нежные гиганты", отличные охотники</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Сфинкс</strong></td>
+                            <td>Бесшерстные, морщинистая кожа</td>
+                            <td>Теплолюбивые, требуют особого ухода за кожей, очень общительные</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Сиамская</strong></td>
+                            <td>Короткошерстные, голубые глаза, темные отметины</td>
+                            <td>Разговорчивые, активные, преданные, могут быть требовательными</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Британская</strong></td>
+                            <td>Плюшевая шерсть, круглые щеки, коренастое телосложение</td>
+                            <td>Спокойные, независимые, хорошо переносят одиночество</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Шотландская вислоухая</strong></td>
+                            <td>Загнутые вперед уши, круглые глаза</td>
+                            <td>Игривые, адаптивные, хорошо ладят с детьми и другими животными</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="image-container">
+                <img src="images/photo3.jpg" alt="Кот породы Мейн-кун">
+                <div class="image-caption">Мейн-кун - одна из самых крупных домашних пород кошек</div>
+            </div>
+        </section>
+
+        <!-- Анатомические особенности -->
+        <section id="anatomy" class="content-section">
+            <h2 class="section-title">Анатомические особенности</h2>
+            <div class="content-text">
+                <p>Кошки обладают уникальным строением тела, которое делает их идеальными хищниками. Их анатомия эволюционировала для эффективной охоты, лазания и выживания в различных условиях.</p>
+            </div>
+
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <h3><i class="fas fa-bone"></i> Гибкость</h3>
+                    <p>У кошек 53 позвонка (у человека только 34), что позволяет им поворачиваться в воздухе и пролезать в узкие пространства. Ключицы кошек не соединены с другими костями, что обеспечивает невероятную гибкость.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h3><i class="fas fa-wave-square"></i> Усы (вибриссы)</h3>
+                    <p>Выполняют функцию навигации и измерения ширины проходов. Расположены не только на морде, но и над глазами, на подбородке и задней стороне передних лап.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h3><i class="fas fa-eye"></i> Зрение</h3>
+                    <p>Угол обзора 200° (у человека 180°), отличное ночное зрение. Кошки видят в 6 раз лучше в темноте, чем люди, но различают меньше цветов.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h3><i class="fas fa-assistive-listening-systems"></i> Слух</h3>
+                    <p>Способны слышать ультразвук до 65 кГц (человек до 20 кГц). Уши кошки могут поворачиваться на 180 градусов независимо друг от друга.</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Кот в прыжке">
+                <div class="image-caption">Идеальная анатомия для прыжков и охоты</div>
+            </div>
+        </section>
+
+        <!-- Поведение и интеллект -->
+        <section id="behavior" class="content-section">
+            <h2 class="section-title">Поведение и интеллект</h2>
+            <div class="content-text">
+                <p>Кошки — высокоинтеллектуальные животные с сложным социальным поведением. Несмотря на репутацию независимых животных, они формируют прочные связи с людьми и другими животными.</p>
+            </div>
+
+            <div class="content-highlight">
+                <h3>Коммуникация</h3>
+                <p>Кошки используют более 100 различных звуков, включая 16 видов мурлыкания. Они также общаются с помощью положения тела и хвоста, выражения морды и феромонов. Мурлыкание может означать не только удовольствие, но и боль, стресс или необходимость в помощи.</p>
+            </div>
+
+            <div class="content-highlight">
+                <h3>Социальная структура</h3>
+                <p>В дикой природе кошки образуют матриархальные колонии, где самки совместно воспитывают котят и защищают территорию. Домашние кошки часто переносят эти социальные структуры на отношения с людьми, рассматривая их как часть своей "колонии".</p>
+            </div>
+
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Играющие котята">
+                <div class="image-caption">Котята учатся социальным навыкам через игру</div>
+            </div>
+        </section>
+
+        <!-- Интересные факты -->
+        <section id="facts" class="content-section">
+            <h2 class="section-title">Интересные факты</h2>
+
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <h3><i class="fas fa-fingerprint"></i> Уникальный нос</h3>
+                    <p>Отпечаток носа кошки так же уникален, как отпечатки пальцев у человека. У каждой кошки свой неповторимый узор на носу.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Скорость</h3>
+                    <p>Домашняя кошка может развивать скорость до 48 км/ч на коротких дистанциях. Для сравнения, самый быстрый человек Усэйн Болт развивает скорость до 45 км/ч.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h3><i class="fas fa-brain"></i> Память</h3>
+                    <p>Кошки обладают кратковременной памятью около 16 часов (собаки — только 5 минут). Это объясняет, почему кошки помнят, кто их обидел, даже через долгое время.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h3><i class="fas fa-bed"></i> Сон</h3>
+                    <p>Кошки спят 12-16 часов в сутки, что составляет около 70% их жизни. Котята и пожилые кошки могут спать до 20 часов в сутки.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h3><i class="fas fa-birthday-cake"></i> Долгожители</h3>
+                    <p>Самая старая кошка в истории, Крим Пафф, прожила 38 лет. Средняя продолжительность жизни домашней кошки составляет 12-15 лет.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h3><i class="fas fa-paw"></i> Походка</h3>
+                    <p>Кошки ходят, перемещая одновременно обе правые, затем обе левые лапы. Такую походку имеют только кошки, верблюды и жирафы.</p>
+                </div>
+            </div>
+
+            <div class="content-highlight">
+                <h3>Кошки в культуре и науке</h3>
+                <p>В Японии существует "остров кошек" Тасиро, где кошек больше, чем людей. Исаак Ньютон изобрел дверцу для кошек, когда его питомец постоянно открывал дверь. В средние века кошек связывали с колдовством, что привело к массовому истреблению и вспышкам чумы, так как сократилось количество естественных врагов грызунов.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1511275539165-cc46b1ee89bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Спящая кошка">
+                <div class="image-caption">Кошки проводят большую часть жизни во сне</div>
+            </div>
+
+            <div class="content-text">
+                <h3>Заключение</h3>
+                <p>Кошки — удивительные создания, которые на протяжении тысячелетий живут рядом с человеком. Их независимость, грация и загадочность продолжают восхищать нас. Независимо от породы, возраста или характера, каждая кошка уникальна и способна принести в дом уют и радость.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1573866926487-a1865558a9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80" alt="Кот в доме">
+                <div class="image-caption">Кошки создают уют в любом доме</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container footer-content">
+            <p><strong>Удивительный мир кошек</strong></p>
+            <p>Материал подготовлен на основе научных исследований о поведении и биологии кошачьих.</p>
+            <p>Все фотографии взяты из открытых источников Unsplash.</p>
+            <p>© 2023 Мир Кошек</p>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Кнопка "Наверх"
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Инициализация - скрываем кнопку при загрузке
+        backToTopButton.style.display = 'none';
+    </script>
+</body>
+</html>
